@@ -1,4 +1,12 @@
-// Fetch tasks from the board
+const apiKey = 'b91ea80f28e74c3318fa1f62ff19d0df';
+const apiToken = 'ATTAc89b7eda0209374b187d2ce077eadee611f5dd6b4c38363f718434af723f4261214853EB';
+const boardId = '66a3cae2b43a7bae2e7c550f';
+const listIds = {
+    toDo: '66a3cae280f9285fbeea4f75',
+    inProgress: '66a3cae20a49e1986ab37a89',
+    underReview: '66a3cae22b221dd9ab49e844',
+    completed: '66a3ded5a04201196f7880f9',
+};// Fetch tasks from the board
 const fetchTasks = async () => {
     try {
         const response = await fetch(`https://api.trello.com/1/boards/${boardId}/cards?key=${apiKey}&token=${apiToken}`);
