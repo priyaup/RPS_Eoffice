@@ -1,0 +1,42 @@
+<h2 class="text-success text-center">Verified user detail!</h2>
+<div class="container mt-5">
+  <div class="card shadow-lg p-5">
+    <div class="card-header">
+      <h2>Certificate Details</h2>
+    </div>
+    <div class="card-body">
+      <p>
+        <strong>Child Name:</strong>
+        <%= @certificate.child_name %>
+      </p>
+      <p>
+        <strong>Father Name:</strong>
+        <%= @certificate.father_name %>
+      </p>
+      <p>
+        <strong>Mother Name:</strong>
+        <%= @certificate.mother_name %>
+      </p>
+      <p>
+        <strong>Date of Birth:</strong>
+        <%= @certificate.Dob %>
+      </p>
+      <p>
+        <strong>Time of Birth:</strong>
+        <%= @certificate.time %>
+      </p>
+      <p>
+        <strong>Place of Birth:</strong>
+        <%= @certificate.place_of_birth %>
+      </p>
+      <p>
+        <strong>Gender:</strong>
+        <%= @certificate.gender %>
+      </p>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Edit', edit_certificate_path(@certificate), class: 'btn btn-primary' %>
+      <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>

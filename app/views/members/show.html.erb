@@ -1,0 +1,37 @@
+<div class="col-md-6 mx-auto mt-5 mb-5">
+  <div class="card h-100 shadow">
+    <div class="card-header">
+      <h1 class="text-center">User Detail</h1>
+    </div>
+    <div class="card-body mb-5 mt-5 px-5">
+      <h5><strong>Name :</strong> <%= @user.name %></h5>
+      <h5>Email: <%= @user.email %></h5>
+      <h5>Address: <%= @user.address %></h5>
+      <h5>Contact: <%= @user.phone_number %></h5>
+      <h5>Pincode: <%= @user.pincode %></h5>
+
+      <h5><strong>Certificates:</strong></h5>
+      <% if @user.certificates.any? %>
+        <ul>
+          <% @user.certificates.each do |certificate| %>
+            <li>
+              <strong>Child Name:</strong> <%= certificate.child_name %>, 
+              <strong>Date of Birth:</strong> <%= certificate.Dob %>, 
+              <strong>Place of Birth:</strong> <%= certificate.place_of_birth %>
+              <%= link_to 'Show', certificate_path(certificate), class: 'btn btn-sm btn-info ml-2' %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No certificates created by this user.</p>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <%= link_to 'Back to Home', root_path, class: "btn text-light mt-3", style: "background-color: #035096" %>
+      <% end %>
+    </div>
+    <% unless user_signed_in? %>
+      <%= link_to 'Back to Admin', admin_index_path, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

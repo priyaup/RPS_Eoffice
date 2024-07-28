@@ -1,0 +1,67 @@
+<div class="card shadow col-lg-8 mt-5 mb-5 p-5 mx-auto">
+  <%= form_with(model: @certificate, local: true, id: 'new_certificate') do |form| %>
+
+    <div class="form-group">
+      <%= form.label :child_name %>
+      <%= form.text_field :child_name, id: 'certificate_child_name', class: 'form-control mt-2 mb-2' %>
+      <% if @certificate.errors[:child_name].any? %>
+        <div class="error-message text-danger"><%= @certificate.errors[:child_name].first %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :father_name %>
+      <%= form.text_field :father_name, id: 'certificate_father_name', class: 'form-control mt-2 mb-2' %>
+      <% if @certificate.errors[:father_name].any? %>
+        <div class="error-message text-danger"><%= @certificate.errors[:father_name].first %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :mother_name %>
+      <%= form.text_field :mother_name, id: 'certificate_mother_name', class: 'form-control mt-2 mb-2' %>
+      <% if @certificate.errors[:mother_name].any? %>
+        <div class="error-message text-danger"><%= @certificate.errors[:mother_name].first %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :Dob %>
+      <%= form.date_field :Dob, id: 'certificate_Dob', class: 'form-control mt-2 mb-2' %>
+      <% if @certificate.errors[:Dob].any? %>
+        <div class="error-message text-danger"><%= @certificate.errors[:Dob].first %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :time %>
+      <%= form.time_field :time, id: 'certificate_time', class: 'form-control mt-2 mb-2' %>
+      <% if @certificate.errors[:time].any? %>
+        <div class="error-message text-danger"><%= @certificate.errors[:time].first %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :gender %>
+      <%= form.text_field :gender, id: 'certificate_gender', class: 'form-control mt-2 mb-2' %>
+      <% if @certificate.errors[:gender].any? %>
+        <div class="error-message text-danger"><%= @certificate.errors[:gender].first %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :place_of_birth %>
+      <%= form.text_field :place_of_birth, id: 'certificate_place_of_birth', class: 'form-control mt-2 mb-2' %>
+      <% if @certificate.errors[:place_of_birth].any? %>
+        <div class="error-message text-danger"><%= @certificate.errors[:place_of_birth].first %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit 'Save', class: 'btn btn-primary' %>
+      <%= link_to 'Back', certificates_path, class: 'btn btn-secondary' %>
+    </div>
+
+  <% end %>
+  <script src="/assets/certi.js"></script>
+</div>

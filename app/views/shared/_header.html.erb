@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg" style="background-color:#035096;">
+  <a class="navbar-brand fw-bold fs-2 px-5" href="/" style="color:#fff">EasyOffice</a>
+  <button class="navbar-toggler text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="navbar-toggler-icon"></i>
+      </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 px-5">
+      <li class="nav-item nav-link fs-5 ">
+        <% if user_signed_in? %>
+         <%= link_to 'My profile' , member_path(current_user) ,class:"nav-item btn btn-success" ,style:"color:#fff" %></li>
+         <% end %>
+      </li>
+       <li class="nav-item nav-link fs-5">
+        <% if user_signed_in? %>
+          <%= button_to 'Sign Out', destroy_user_session_path, method: :delete , class:'btn btn-danger',style:"color:#fff" %>
+
+        <% else %>
+          <%= link_to 'Log In', new_user_session_path,class:'btn btn-success', style:"color:#fff" %>
+        <% end %>
+      </li>
+      <li class="nav-item nav-link fs-5"><%= link_to 'Sign Up', new_user_registration_path,class:'btn btn-primary', style:"color:#fff" %>
+      </li> 
+    </ul>
+  </div>
+</nav>

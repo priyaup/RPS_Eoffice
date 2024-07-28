@@ -1,0 +1,34 @@
+<style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      .task {
+          border: 1px solid #ccc;
+          padding: 10px;
+          margin: 10px 0;
+      }
+      .task button {
+          margin-right: 10px;
+          color: white;
+          background-color:black;
+      }
+      .task.in-progress {
+          background-color: #ffeb3b; /* Yellow */
+      }
+      .task.under-review {
+          background-color: #ff9800; /* Orange */
+      }
+      .task.completed {
+          background-color: #4caf50; /* Green */
+          color: white;
+      }
+  </style>
+<div class="container mt-5 p-5 card shadow">
+    <h1>Task Management with Progress Tracking</h1>
+    <div id="tasks-container"></div>
+     
+    <div id="timestamp-container"></div>
+   <script src="/assets/task.js"></script>
+    
+</div>
+
